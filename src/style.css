@@ -44,7 +44,10 @@ to {
 }
 body {
   background-color: var(--color-background);
-  padding-inline: 2rem;
+  padding: 2rem;  /* Change from padding-inline to padding (all sides) */
+  margin: 0;  /* Remove default body margin */
+  height: 100vh;  /* Make body full viewport height */
+  overflow: hidden;  /* Prevent scrolling */
 }
 
 .container {
@@ -59,13 +62,13 @@ body {
   background-repeat: repeat;
   background-size: 360px;
   box-shadow: -12px -12px 0 0 var(--color-shadow);
-  height: calc(100vh - 8rem);
-  margin-inline: auto;
-  margin-block: 2rem;
+  height: 100%;  /* Fill parent (body) completely */
+  margin: 0;  /* Remove margin (body padding creates the gap) */
   border-radius: 1rem;
   padding: 2rem;
   padding-block-start: 3rem;
   max-width: 500px;
+  margin-inline: auto;  /* Keep horizontal centering */
 }
 
 

@@ -7,6 +7,12 @@ const button = document.getElementById("add-coffee")
 const savedCoffees = localStorage.getItem('coffees')
 let totalCoffees = savedCoffees ? JSON.parse(savedCoffees) : 0;
 
+if (totalCoffees === 10) {
+  document.documentElement.style.cssText = "--animation: font-thickness-buy-new-card ease-in-out 0.5s infinite alternate;"
+} else {
+  document.documentElement.style.cssText = "--animation: font-thickness ease-in-out 3s infinite alternate;"
+}
+
 number.textContent = totalCoffees;
 
 localStorage.setItem('coffees', JSON.stringify(totalCoffees));
