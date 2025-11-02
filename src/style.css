@@ -42,11 +42,15 @@ to {
   "EHLT" 1;
 }
 }
+html {
+  height: -webkit-fill-available;
+}
 body {
   background-color: var(--color-background);
   padding: 2rem;  /* Change from padding-inline to padding (all sides) */
   margin: 0;  /* Remove default body margin */
   height: 100vh;  /* Make body full viewport height */
+  height: -webkit-fill-available;
   overflow: hidden;  /* Prevent scrolling */
 }
 
