@@ -42,15 +42,20 @@
 }
 
 html {
-  height: -webkit-fill-available;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
   background-color: var(--color-background);
   padding: 2rem;
   margin: 0;
-  height: 100vh;
-  height: -webkit-fill-available;
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile */
+  max-height: 100vh;
+  max-height: 100dvh;
+  overflow: hidden;
+  box-sizing: border-box; /* Include padding in height calculation */
 }
 
 .container {
