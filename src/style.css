@@ -8,7 +8,80 @@
 
 }
 
-@keyframes font-thickness {
+@supports (font-tech(color-COLRv1)) {
+  #number {
+    font-family: "Nabla", system-ui;
+  }
+
+  @keyframes font-thickness {
+    from {
+      scale: 1;
+      font-variation-settings:
+        "EDPT" 20,
+        "EHLT" 7;
+    }
+  
+    to {
+      scale: 0.6;
+      font-variation-settings:
+        "EDPT" 200,
+        "EHLT" 0;
+    }
+  }
+
+  @keyframes font-thickness-buy-new-card {
+    from {
+      scale: 1;
+      font-variation-settings:
+        "EDPT" 190,
+        "EHLT" 1;
+    }
+  
+    to {
+      scale: 0.9;
+  
+      font-variation-settings:
+        "EDPT" 200,
+        "EHLT" 1;
+    }
+  }
+}
+
+@supports not (font-tech(color-COLRv1)) {
+  #number {
+    font-family: "Ojuju", sans-serif;
+  }
+
+  @keyframes font-thickness {
+    from {
+      color: #FDD314;
+      scale: 1;
+      font-weight: 200;
+    }
+  
+    to {
+      color: #DA86B7;
+      scale: 0.6;
+      font-weight: 800;
+    }
+  }
+
+  @keyframes font-thickness-buy-new-card {
+    from {
+      color: #FDD314;
+      scale: 1;
+      font-weight: 600;
+    }
+  
+    to {
+      color: #DA86B7;
+      scale: 0.8;
+      font-weight: 800;
+    }
+  }
+}
+
+/* @keyframes font-thickness {
   from {
     scale: 1;
     font-variation-settings:
@@ -39,7 +112,7 @@
       "EDPT" 200,
       "EHLT" 1;
   }
-}
+} */
 
 html {
   height: 100%;
@@ -79,7 +152,7 @@ body {
   margin-inline: auto;
 }
 
-@supports (font-tech(color-COLRv1)) {
+/* @supports (font-tech(color-COLRv1)) {
   #number {
     font-family: "Nabla", system-ui;
   }
@@ -89,7 +162,8 @@ body {
   #number {
     font-family: "Badeen Display", system-ui;
   }
-}
+} */
+
 
 #number {
   font-size: clamp(8rem, 40vh, 55vh);
@@ -98,20 +172,6 @@ body {
   font-style: normal;
   margin-block: auto;
   animation: var(--animation);
-}
-
-@supports not (font-tech(color-COLRv1)) {
-  #number {
-    font-size: clamp(8rem, 40vh, 55vh);
-    line-height: 1;
-    font-family: "Badeen Display", system-ui;
-    font-optical-sizing: auto;
-    font-style: normal;
-    margin-block: auto;
-    color: var(--color-button);
-    text-shadow: -22px -22px 0 #f58415;
-    animation: var(--animation);
-  }
 }
 
 
